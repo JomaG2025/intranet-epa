@@ -545,6 +545,37 @@
 							</div>
 						</div>
 
+						<!-- SIGER -->
+						<div class="col-md-6 col-lg-4">
+							<div class="panel panel-default panel-app no-border">
+								<div class="panel-body">
+									<div class="media">
+										<div class="media-object pull-left">
+											<a href="http://192.168.20.180/auth/login" target="_blank">
+												<span class="fa-stack fa-3x">
+													<i class="fa fa-circle fa-stack-2x"></i>
+													<i class="fa fa-cogs fa-stack-1x fa-inverse small"></i>
+												</span>
+											</a>
+										</div>
+
+										<div class="media-body pt-10">
+											<a href="http://192.168.20.180/auth/login" target="_blank">
+												<h4 class="media-heading">SIGER <small><span class="label label-warning" style="font-size: 10px;">En proceso</span></small></h4>
+											</a>
+											<p><small>Sistema de Gestión de Requerimientos.</small></p>
+										</div>
+									</div>
+								</div>
+
+								<div class="list-group">
+									<a href="http://192.168.20.180/auth/login" target="_blank" class="list-group-item">
+										Ir al Sistema <i class="fa fa-angle-right pull-right"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
 			
 		    <script>
 				    	
