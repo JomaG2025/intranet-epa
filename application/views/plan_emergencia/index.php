@@ -516,7 +516,6 @@
     .epa-wip-icon {
       font-size: 36px;
       flex-shrink: 0;
-      animation: wip-pulse 2s ease-in-out infinite;
     }
 
     @keyframes wip-pulse {
@@ -669,7 +668,7 @@
         <article class="epa-card">
           <div class="epa-card-img-wrap">
             <span class="epa-card-badge"><i class="fa fa-building"></i> Nivel 2</span>
-            <img src="<?= $base_img ?>plano_2piso.png" alt="Plano 2° Piso Edificio Administrativo" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <img src="<?= $base_img ?>plano_2piso.png" alt="Plano Evacuación 2° Piso">
           </div>
           <div class="epa-card-body">
             <h2 class="epa-card-title">Plano Evacuación 2° Piso</h2>
@@ -683,36 +682,36 @@
           </div>
         </article>
 
-        <!-- Plano 2: Señalización Oficinas -->
+        <!-- Plano 2: Mapa General Puerto -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge"><i class="fa fa-info-circle"></i> Señalética</span>
-            <img src="<?= $base_img ?>anexo_senalizacion_oficinas.png" alt="Señalización de Oficinas" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge"><i class="fa fa-anchor"></i> General</span>
+            <img src="<?= $base_img ?>plano_general.jpg" alt="Mapa General del Recinto Portuario">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Señalización de Oficinas</h2>
-            <div class="epa-card-sector"><i class="fa fa-map-marker"></i> Sector: Áreas Administrativas y Pasillos</div>
-            <p class="epa-card-desc">Guía de señalética de emergencia, ubicación de equipos de extinción y vías de evacuación hacia zonas seguras.</p>
+            <h2 class="epa-card-title">Mapa General del Recinto Portuario</h2>
+            <div class="epa-card-sector"><i class="fa fa-map-marker"></i> Sector: Terminal Portuario Arica (EPA)</div>
+            <p class="epa-card-desc">Vista integral del puerto con delimitación de zonas operativas, puntos de encuentro y vías de evacuación rápida.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Señalización de Oficinas', '<?= $base_img ?>anexo_senalizacion_oficinas.png')">
+              <button class="epa-btn-primary" onclick="openEpaModal('Mapa General del Recinto Portuario', '<?= $base_img ?>plano_general.jpg')">
                 <i class="fa fa-search-plus"></i> VER PLANO EN GRANDE
               </button>
             </div>
           </div>
         </article>
-
-        <!-- Plano 3: Mapa General Puerto -->
+        
+        <!-- Plano 3: Salidas de Emergencia (Anexo 3) -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge"><i class="fa fa-anchor"></i> General</span>
-            <img src="<?= $base_img ?>anexo3_puerto.png" alt="Mapa General Puerto Arica" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-amber); color:var(--epa-amber);"><i class="fa fa-sign-out"></i> Salidas</span>
+            <img src="<?= $base_img ?>anexo3_salidas.jpg" alt="Salidas de Emergencia y Puntos de Reunión">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Mapa General del Recinto Portuario</h2>
-            <div class="epa-card-sector"><i class="fa fa-map-marker"></i> Sector: Terminal Portuario Arica (EPA)</div>
-            <p class="epa-card-desc">Vista integral del puerto con delimitación de zonas operativas, puntos de encuentro 1 y 2 y vías de evacuación rápida.</p>
+            <h2 class="epa-card-title">Salidas de Emergencia</h2>
+            <div class="epa-card-sector"><i class="fa fa-location-arrow"></i> Sector: Zonas exteriores e interiores</div>
+            <p class="epa-card-desc">Información clara y visual de las rutas de evacuación, puertas de escape operativas y puntos de reunión establecidos.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Mapa General del Recinto Portuario', '<?= $base_img ?>anexo3_puerto.png')">
+              <button class="epa-btn-primary" onclick="openEpaModal('Salidas de Emergencia y Puntos de Reunión', '<?= $base_img ?>anexo3_salidas.jpg')">
                 <i class="fa fa-search-plus"></i> VER PLANO EN GRANDE
               </button>
             </div>
@@ -728,54 +727,54 @@
     <section id="tab-vias" class="epa-tab-content">
       <div class="epa-cards-grid">
 
-        <!-- Vía 1: Vías de Escape Principales -->
+        <!-- Vía 1: Vía de escape al punto de encuentro -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge" style="border-color:var(--epa-green); color:var(--epa-green);"><i class="fa fa-sign-out"></i> Vía Principal</span>
-            <img src="<?= $base_img ?>anexo4_via_escape.png" alt="Vías de Escape Principales" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-green); color:var(--epa-green);"><i class="fa fa-map-signs"></i> Ruta Urbana</span>
+            <img src="<?= $base_img ?>anexo4_vias.jpg" alt="Vía de escape al punto de encuentro">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Vías de Escape Principales</h2>
-            <div class="epa-card-sector"><i class="fa fa-location-arrow"></i> Sector: Terminal 1 y Bodegas Operativas</div>
-            <p class="epa-card-desc">Corredores habilitados para la evacuación inmediata del personal hacia las zonas de seguridad exterior.</p>
+            <h2 class="epa-card-title">Trayecto al Punto de Encuentro</h2>
+            <div class="epa-card-sector"><i class="fa fa-location-arrow"></i> Sector: Máximo Lira hasta San Marcos</div>
+            <p class="epa-card-desc">Fotografía aérea con el trayecto desde el frontis del edificio corporativo hasta el punto de encuentro en San Marcos con Sotomayor.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Vías de Escape Principales', '<?= $base_img ?>anexo4_via_escape.png')">
+              <button class="epa-btn-primary" onclick="openEpaModal('Trayecto al Punto de Encuentro', '<?= $base_img ?>anexo4_vias.jpg')">
                 <i class="fa fa-eye"></i> VER MAPA DE VÍAS
               </button>
             </div>
           </div>
         </article>
 
-        <!-- Vía 2: Ruta Estacionamientos -->
+        <!-- Vía 2: Ruta Escaleras -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge" style="border-color:var(--epa-amber); color:var(--epa-amber);"><i class="fa fa-car"></i> Estacionamiento</span>
-            <img src="<?= $base_img ?>anexo_ruta_estacionamiento.jpg" alt="Ruta de Evacuación Estacionamientos" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-amber); color:var(--epa-amber);"><i class="fa fa-stairs"></i> Escaleras</span>
+            <img src="<?= $base_img ?>ruta_escaleras.jpg" alt="Ruta Segura Escaleras">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Ruta Evacuación Vehicular</h2>
-            <div class="epa-card-sector"><i class="fa fa-location-arrow"></i> Sector: Zona de Vehículos y Accesos Puerta Norte</div>
-            <p class="epa-card-desc">Procedimiento y sentido de flujo para vehículos y peatones en el sector de estacionamientos durante una evacuación.</p>
+            <h2 class="epa-card-title">Ruta Segura - Escaleras</h2>
+            <div class="epa-card-sector"><i class="fa fa-arrow-down"></i> Sector: Escalera junto estacionamiento</div>
+            <p class="epa-card-desc">Secuencia de salida paso a paso por las escaleras de emergencia y demarcación hasta la zona de seguridad.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Ruta Evacuación Vehicular', '<?= $base_img ?>anexo_ruta_estacionamiento.jpg')">
+              <button class="epa-btn-primary" onclick="openEpaModal('Ruta Segura - Escaleras', '<?= $base_img ?>ruta_escaleras.jpg')">
                 <i class="fa fa-eye"></i> VER MAPA DE VÍAS
               </button>
             </div>
           </div>
         </article>
-
-        <!-- Vía 3: Protocolo Tsunami / Cota 30 -->
+        
+        <!-- Vía 3: Rutas Letreros -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge" style="border-color:var(--epa-blue); color:var(--epa-light-cyan);"><i class="fa fa-tint"></i> Alerta Tsunami</span>
-            <img src="<?= $base_img ?>anexo_protocolo_tsunami.png" alt="Ruta Evacuación Tsunami Cota 30" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-cyan); color:var(--epa-cyan);"><i class="fa fa-bolt"></i> Señalización</span>
+            <img src="<?= $base_img ?>rutas_letreros.png" alt="Señalización Rutas">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Evacuación Tsunami (Cota 30)</h2>
-            <div class="epa-card-sector"><i class="fa fa-location-arrow"></i> Sector: Borde Costero y Recinto Portuario</div>
-            <p class="epa-card-desc">Ruta peatonal hacia zonas de seguridad sobre la cota de 30 metros de altura sobre el nivel del mar.</p>
+            <h2 class="epa-card-title">Señalización de Rutas</h2>
+            <div class="epa-card-sector"><i class="fa fa-sign-in"></i> Sector: Interiores Edificio</div>
+            <p class="epa-card-desc">Guía de señalética luminosa y rutas de evacuación correctamente señalizadas para una evacuación rápida, ordenada y segura.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Evacuación Tsunami (Cota 30)', '<?= $base_img ?>anexo_protocolo_tsunami.png')">
+              <button class="epa-btn-primary" onclick="openEpaModal('Señalización de Rutas', '<?= $base_img ?>rutas_letreros.png')">
                 <i class="fa fa-eye"></i> VER MAPA DE VÍAS
               </button>
             </div>
@@ -791,21 +790,37 @@
     <section id="tab-coordinadores" class="epa-tab-content">
       <div class="epa-cards-grid">
 
-        <!-- Coordinador 1: Roxana Barahona -->
+        <!-- Infografía Coordinadores -->
+        <article class="epa-card">
+          <div class="epa-card-img-wrap" style="min-height: 200px;">
+            <span class="epa-card-badge"><i class="fa fa-info-circle"></i> Roles</span>
+            <img src="<?= $base_img ?>coordinadores.png" alt="Roles de Coordinadores">
+          </div>
+          <div class="epa-card-body">
+            <h2 class="epa-card-title">Rol del Coordinador</h2>
+            <div class="epa-card-sector"><i class="fa fa-check-circle"></i> Responsabilidad de Evacuación</div>
+            <p class="epa-card-desc">Su objetivo es evaluar la situación, ejecutar y supervisar toda acción tendiente al control de la emergencia.</p>
+            <div class="epa-card-footer">
+              <button class="epa-btn-primary" onclick="openEpaModal('Roles de Coordinadores', '<?= $base_img ?>coordinadores.png')">
+                <i class="fa fa-search-plus"></i> VER INFOGRAFÍA
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coordinador 1: Roxana Bavestrello -->
         <article class="epa-card">
           <div class="epa-card-body" style="align-items:center; text-align:center;">
             <div class="epa-coord-avatar-wrap">
-              <i class="fa fa-user-circle"></i>
+              <i class="fa fa-female"></i>
             </div>
-            <h2 class="epa-card-title" style="margin-bottom:4px;">Roxana Barahona</h2>
+            <h2 class="epa-card-title" style="margin-bottom:4px;">Sra. Roxana Bavestrello M</h2>
             <div class="epa-card-sector" style="justify-content:center;">
-              <i class="fa fa-star" style="color:var(--epa-amber);"></i> Coordinadora Principal de Emergencias
+              <i class="fa fa-star" style="color:var(--epa-amber);"></i> Coordinador de Emergencia
             </div>
-            <p class="epa-card-desc" style="font-size:12px; margin-bottom:12px;">
-              Encargada de la dirección operativa y toma de decisiones en situaciones de emergencia y evacuación.
-            </p>
-            <div class="epa-coord-phone">
-              <i class="fa fa-phone" style="color:var(--epa-cyan);"></i> +56 9 9545 5354
+            <div class="epa-coord-phone" style="flex-direction: column; align-items: center; font-size:13px; line-height: 1.6;">
+              <div><i class="fa fa-phone" style="color:var(--epa-cyan);"></i> (+569) 9545 5354</div>
+              <div><i class="fa fa-envelope" style="color:var(--epa-cyan);"></i> rbavestrello@puertoarica.cl</div>
             </div>
             <div class="epa-card-footer" style="width:100%;">
               <a href="tel:+56995455354" class="epa-btn-call">
@@ -818,21 +833,19 @@
           </div>
         </article>
 
-        <!-- Coordinador 2: Juan Barahona -->
+        <!-- Coordinador 2: Juan Barrios -->
         <article class="epa-card">
           <div class="epa-card-body" style="align-items:center; text-align:center;">
             <div class="epa-coord-avatar-wrap">
-              <i class="fa fa-user-circle"></i>
+              <i class="fa fa-male"></i>
             </div>
-            <h2 class="epa-card-title" style="margin-bottom:4px;">Juan Barahona</h2>
+            <h2 class="epa-card-title" style="margin-bottom:4px;">Sr. Juan Barrios M</h2>
             <div class="epa-card-sector" style="justify-content:center;">
-              <i class="fa fa-shield" style="color:var(--epa-cyan);"></i> Coordinador Secundario de Emergencias
+              <i class="fa fa-shield" style="color:var(--epa-cyan);"></i> Coordinador de Emergencia
             </div>
-            <p class="epa-card-desc" style="font-size:12px; margin-bottom:12px;">
-              Apoyo directo en terreno, coordinación de líderes de piso y verificación de vías despejadas.
-            </p>
-            <div class="epa-coord-phone">
-              <i class="fa fa-phone" style="color:var(--epa-cyan);"></i> +56 9 6634 7008
+            <div class="epa-coord-phone" style="flex-direction: column; align-items: center; font-size:13px; line-height: 1.6;">
+              <div><i class="fa fa-phone" style="color:var(--epa-cyan);"></i> (+569) 6634 7008</div>
+              <div><i class="fa fa-envelope" style="color:var(--epa-cyan);"></i> jbarrios@puertoarica.cl</div>
             </div>
             <div class="epa-card-footer" style="width:100%;">
               <a href="tel:+56966347008" class="epa-btn-call">
@@ -840,30 +853,6 @@
               </a>
               <a href="<?= formatWhatsAppUrl('+56966347008') ?>" target="_blank" rel="noopener noreferrer" class="epa-btn-whatsapp">
                 <i class="fa fa-whatsapp"></i> WhatsApp
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Coordinador 3: Prevención de Riesgos -->
-        <article class="epa-card">
-          <div class="epa-card-body" style="align-items:center; text-align:center;">
-            <div class="epa-coord-avatar-wrap" style="border-color:var(--epa-green);">
-              <i class="fa fa-medkit" style="color:var(--epa-green);"></i>
-            </div>
-            <h2 class="epa-card-title" style="margin-bottom:4px;">Prevención de Riesgos EPA</h2>
-            <div class="epa-card-sector" style="justify-content:center;">
-              <i class="fa fa-plus-square" style="color:var(--epa-green);"></i> Departamento de Seguridad y Salud
-            </div>
-            <p class="epa-card-desc" style="font-size:12px; margin-bottom:12px;">
-              Asistencia técnica, primeros auxilios y coordinación con mutualidad y servicios de urgencia externos.
-            </p>
-            <div class="epa-coord-phone">
-              <i class="fa fa-phone" style="color:var(--epa-cyan);"></i> +56 58 220 1100
-            </div>
-            <div class="epa-card-footer" style="width:100%;">
-              <a href="tel:+56582201100" class="epa-btn-call" style="width:100%;">
-                <i class="fa fa-phone"></i> Central Telefónica EPA
               </a>
             </div>
           </div>
@@ -878,55 +867,37 @@
     <section id="tab-protocolos" class="epa-tab-content">
       <div class="epa-cards-grid">
 
-        <!-- Protocolo 1: Procedimiento General -->
+        <!-- Protocolo 1: Tsunami -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge"><i class="fa fa-list"></i> Guía General</span>
-            <img src="<?= $base_img ?>anexo_procedimiento_general.jpg" alt="Procedimiento General de Emergencia" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-cyan); color:var(--epa-cyan);"><i class="fa fa-tint"></i> Marítimo</span>
+            <img src="<?= $base_img ?>info_tsunami.png" alt="¿Qué hacer ante un Tsunami?">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Procedimiento General de Evacuación</h2>
-            <div class="epa-card-sector"><i class="fa fa-check-circle"></i> Protocolo 3 Pasos: Evalúa &bull; Actúa &bull; Evacúa</div>
-            <p class="epa-card-desc">Directrices fundamentales a seguir desde la activación de la señal de alarma hasta la llegada al punto de encuentro.</p>
+            <h2 class="epa-card-title">¿Qué hacer ante un Tsunami?</h2>
+            <div class="epa-card-sector"><i class="fa fa-exclamation-triangle"></i> Instrucciones de Seguridad</div>
+            <p class="epa-card-desc">Pasos a seguir al momento de recibir un llamado o alerta de tsunami, desde la evaluación inicial hasta el punto de encuentro.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Procedimiento General de Evacuación', '<?= $base_img ?>anexo_procedimiento_general.jpg')">
-                <i class="fa fa-file-text-o"></i> VER PROTOCOLO
+              <button class="epa-btn-primary" onclick="openEpaModal('¿Qué hacer ante un Tsunami?', '<?= $base_img ?>info_tsunami.png')">
+                <i class="fa fa-file-text-o"></i> VER INFOGRAFÍA
               </button>
             </div>
           </div>
         </article>
 
-        <!-- Protocolo 2: Protocolo Tsunami -->
+        <!-- Protocolo 2: Simulacro -->
         <article class="epa-card">
           <div class="epa-card-img-wrap">
-            <span class="epa-card-badge"><i class="fa fa-warning"></i> Marítimo</span>
-            <img src="<?= $base_img ?>anexo_protocolo_tsunami.png" alt="Protocolo Tsunami" onerror="this.src='<?= $base_img ?>coordinadores.png'">
+            <span class="epa-card-badge" style="border-color:var(--epa-green); color:var(--epa-green);"><i class="fa fa-refresh"></i> Ejercicios</span>
+            <img src="<?= $base_img ?>simulacro.png" alt="Evacuación - Simulacro">
           </div>
           <div class="epa-card-body">
-            <h2 class="epa-card-title">Protocolo ante Alerta de Tsunami</h2>
-            <div class="epa-card-sector"><i class="fa fa-tint"></i> Alerta SHOA / SENAPRED</div>
-            <p class="epa-card-desc">Acciones inmediatas ante sismos de gran magnitud en la zona costera y ruta de evacuación hacia cota 30.</p>
+            <h2 class="epa-card-title">Evacuación - Simulacro</h2>
+            <div class="epa-card-sector"><i class="fa fa-camera"></i> Secuencia Fotográfica</div>
+            <p class="epa-card-desc">Registro del ejercicio de simulacro: inicio de la evacuación, descenso por escaleras, desplazamiento y llegada a zona segura.</p>
             <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Protocolo ante Alerta de Tsunami', '<?= $base_img ?>anexo_protocolo_tsunami.png')">
-                <i class="fa fa-file-text-o"></i> VER PROTOCOLO
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Protocolo 3: Simulacros -->
-        <article class="epa-card">
-          <div class="epa-card-img-wrap">
-            <span class="epa-card-badge"><i class="fa fa-refresh"></i> Ejercicios</span>
-            <img src="<?= $base_img ?>anexo_simulacro_evacuacion.png" alt="Simulacro de Evacuación" onerror="this.src='<?= $base_img ?>coordinadores.png'">
-          </div>
-          <div class="epa-card-body">
-            <h2 class="epa-card-title">Simulacro de Evacuación</h2>
-            <div class="epa-card-sector"><i class="fa fa-clock-o"></i> Entrenamiento Periódico</div>
-            <p class="epa-card-desc">Instructivo de medición de tiempos de respuesta, roles de líderes de piso y evaluación post-ejercicio.</p>
-            <div class="epa-card-footer">
-              <button class="epa-btn-primary" onclick="openEpaModal('Simulacro de Evacuación', '<?= $base_img ?>anexo_simulacro_evacuacion.png')">
-                <i class="fa fa-file-text-o"></i> VER PROTOCOLO
+              <button class="epa-btn-primary" onclick="openEpaModal('Evacuación - Simulacro', '<?= $base_img ?>simulacro.png')">
+                <i class="fa fa-file-text-o"></i> VER SECUENCIA
               </button>
             </div>
           </div>
