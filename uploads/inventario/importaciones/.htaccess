@@ -1,0 +1,25 @@
+# Modulo Inventario - carpeta de STAGING de archivos Excel subidos para
+# importar (ver application/controllers/inventario_importacion.php).
+#
+# A diferencia de uploads/inventario/fotos/, estos archivos NUNCA se
+# muestran ni se descargan desde el navegador -- solo se vuelven a leer
+# del lado del servidor (PHPExcel) entre la vista previa y la
+# confirmacion, y se borran automaticamente al confirmar o cancelar. No
+# hay ningun motivo legitimo para que alguien los pida por HTTP
+# directamente, asi que aqui se deniega el acceso a TODO archivo, no
+# solo a los ejecutables.
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
+
+<IfModule mod_php5.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>

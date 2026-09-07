@@ -1,0 +1,4 @@
+.collapsed { display: none; }
+.adeimg, .ttimage, .parimg{ border: none; margin: 0px; padding: 0px; vertical-align: middle; width: 16px; height: 25px; }
+.adeimg, .parimg {cursor: pointer; }
+.preimg { border: none; margin: 0px; padding: 0px; vertical-align: middle; height: 25px; width: 16px;}

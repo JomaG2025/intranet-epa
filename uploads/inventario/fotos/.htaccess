@@ -1,0 +1,26 @@
+# Modulo Inventario - carpeta de fotografias subidas por usuarios.
+# Impide que un archivo malicioso subido con extension disfrazada se
+# pueda llegar a EJECUTAR como script si algun dia terminara ahi
+# (el modulo ya valida extension + MIME real + getimagesize() antes
+# de guardar cualquier archivo, pero esta es una segunda capa de
+# defensa a nivel de servidor, independiente del codigo PHP).
+
+# Apache con mod_php: desactiva el motor PHP para esta carpeta.
+<IfModule mod_php5.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Cualquier servidor Apache (con o sin mod_php): deniega el acceso
+# directo a archivos con extension ejecutable, sirva quien los sirva.
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

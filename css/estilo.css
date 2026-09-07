@@ -1,0 +1,173 @@
+/***********************/
+/*! Fechas circulares  */
+/***********************/
+
+.circulo-fecha{
+    border: solid 1px #25336d;
+	width: 60px;
+	height: 60px;
+	-webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.circulo-fecha h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+	margin-top: 7px;
+}
+
+.circulo-fecha h4{
+    font-family: 'Roboto', sans-serif;
+	margin-top: -12px;
+	font-weight: 100;
+}
+
+.media .pull-left:hover{
+	text-decoration: none;
+}
+
+/*****************************/
+/*! Iconos accesos directos  */
+/*****************************/
+
+.acceso{
+    height: 90px;
+    width: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.acceso.correo{
+    background-image: url('../imagenes/btn-correo.svg');
+    background-color: #13a8e2;
+}
+
+.acceso.aplicacion{
+    background-image: url('../imagenes/btn-aplicacion.svg');
+    background-color: #0e79a2;
+}
+
+.acceso.eppo{
+    background-image: url('../imagenes/btn-eppo.svg');
+    background-color: #084962;
+}
+
+.acceso.geovictoria{
+    background-image: url('../imagenes/btn-geovictoria.svg');
+    background-color: #25336d;
+}
+
+.acceso:hover{
+    -webkit-filter: brightness(105%);
+    filter: brightness(105%);
+}
+
+.acceso-icono:hover{
+    -webkit-filter: contrast(95%);
+    filter: contrast(93%);
+}
+
+.acceso-icono{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    display: block;
+    overflow: hidden;
+}
+
+#carousel-novedades{
+    overflow: hidden;
+}
+
+#carousel-novedades .item{
+    height: 390px;
+    background-position: center;
+}
+
+#carousel-novedades .carousel-caption{
+    padding-bottom: 100px;
+}
+
+#carousel-novedades .carousel-caption a:link,
+#carousel-novedades .carousel-caption a:visited,
+#carousel-novedades .carousel-caption a:active,
+#carousel-youtube .carousel-caption a:link,
+#carousel-youtube .carousel-caption a:visited,
+#carousel-youtube .carousel-caption a:active{
+    color: #FFF;
+}
+
+#carousel-youtube img{
+    width: auto; 
+}
+
+#carousel-novedades .carousel-caption,
+#carousel-youtube .carousel-caption{
+    bottom: 0px;
+    font-size: 1.2em;
+}
+
+.carousel a.carousel-control i{
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;  
+}
+
+/***********/
+/*! Login  */
+/***********/
+
+.body-login{
+	background: linear-gradient(rgba(0,120,189,0.65), rgba(0,120,189,0.65)), url('../imagenes/login-fondo.jpg');
+	background-size: auto;
+	background-position: center top;
+}
+
+.container-login{
+	max-width: 380px;
+}
+
+.container-primer-inicio{
+	max-width: 600px;
+}
+
+
+@media (max-width:765px){
+	.container-login,
+	.container-primer-inicio{
+		margin-top: 50px;
+	}
+}
+
+@media (min-width:768px){
+	.container-login,
+	.container-primer-inicio{
+		margin-top: 130px;
+	}
+}
+
+.container-login img{
+	margin: 10px 0 20px 0;
+}
+
+.container-login a:link{
+	text-decoration: none;
+}
+
+.list-group-item.dark{
+	background-color: #F5F5F5;
+}
+
+div.zabuto_calendar .table tr td.event div.day, div.zabuto_calendar ul.legend li.event{
+    background: none;
+}
