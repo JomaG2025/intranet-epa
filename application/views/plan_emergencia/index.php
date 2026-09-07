@@ -16,14 +16,14 @@
       --epa-bg-main: #f0f4f8; /* Fondo claro azulado */
       --epa-card-bg: #ffffff;
       --epa-border: #e2e8f0;
-      --epa-primary: #2764b8; /* Azul institucional */
-      --epa-primary-hover: #1d4ed8;
-      --epa-cyan: #0ea5e9;
+      --epa-primary: #1e3a8a; /* Azul institucional corporativo */
+      --epa-primary-hover: #1e40af;
+      --epa-cyan: #0284c7;
       --epa-light-cyan: #e0f2fe;
-      --epa-green: #10b981;
+      --epa-green: #059669;
       --epa-whatsapp: #25D366;
-      --epa-red: #ef4444;
-      --epa-amber: #f59e0b;
+      --epa-red: #dc2626;
+      --epa-amber: #d97706;
       --epa-text-main: #1e293b;
       --epa-text-muted: #64748b;
       
@@ -223,12 +223,11 @@
 
     .epa-card-img-wrap img {
       width: 100%;
-      height: 100%;
-      max-height: 350px;
-      object-fit: contain;
-      object-position: center top;
+      height: 260px;
+      object-fit: cover;
+      object-position: top;
       transition: transform 0.4s ease;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
     }
 
     .epa-card:hover .epa-card-img-wrap img {
@@ -518,38 +517,27 @@
       flex-shrink: 0;
     }
 
-    @keyframes wip-pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50%       { transform: scale(1.12); opacity: 0.8; }
+    .epa-search-container {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 16px;
+      margin-left: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 320px;
     }
-
-    .epa-wip-text h3 {
-      margin: 0 0 4px 0;
-      font-size: 17px;
-      font-weight: 800;
-      color: #fef3c7;
-      letter-spacing: 0.3px;
+    .epa-search-container input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 6px;
+      font-size: 14px;
+      color: var(--epa-text-main);
     }
-
-    .epa-wip-text p {
-      margin: 0;
-      font-size: 13px;
-      color: #fde68a;
-      line-height: 1.4;
-    }
-
-    .epa-wip-badge {
-      margin-left: auto;
-      background: #f59e0b;
-      color: #1c0a00;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 6px 14px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
+    .epa-search-container i {
+      color: var(--epa-text-muted);
+      margin-right: 8px;
     }
 
     /* Responsividad ajustada */
@@ -567,16 +555,16 @@
       }
       .epa-header-actions {
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      .epa-search-container {
+        margin-left: 0;
+        width: 100%;
       }
       .epa-logo-img {
         height: 48px;
-      }
-      .epa-wip-banner {
-        flex-wrap: wrap;
-      }
-      .epa-wip-badge {
-        margin-left: 0;
       }
     }
   </style>
@@ -584,7 +572,7 @@
 <body>
 
 <?php
-  $base_img = base_url('imagenes/plan_emergencia/');
+  $base_img = '/imagenes/plan_emergencia/';
   
   // Normalizador de teléfono para WhatsApp
   function formatWhatsAppUrl($phone_raw) {
@@ -614,13 +602,13 @@
         </div>
 
         <div class="epa-header-actions">
-          <div class="epa-alert-banner">
-            <i class="fa fa-exclamation-triangle"></i>
-            <span>ESTADO: OPERATIVO / PUERTA SUR EN MANTENIMIENTO</span>
-          </div>
           <a href="<?= site_url('inicio'); ?>" class="epa-btn-back">
             <i class="fa fa-arrow-left"></i> Volver al Inicio
           </a>
+          <div class="epa-search-container">
+            <i class="fa fa-search"></i>
+            <input type="text" id="epaSearchInput" placeholder="Buscar plan, instalación o sector..." onkeyup="filterEpaCards()">
+          </div>
         </div>
 
       </div>
@@ -629,15 +617,7 @@
 
   <div class="epa-container">
 
-    <!-- ===== BANNER: MÓDULO EN CONSTRUCCIÓN ===== -->
-    <div class="epa-wip-banner" role="alert">
-      <span class="epa-wip-icon">🚧</span>
-      <div class="epa-wip-text">
-        <h3>Módulo en Construcción</h3>
-        <p>Estamos trabajando en este módulo para mejorar la experiencia. El contenido que visualiza es de referencia y podría actualizarse pronto.</p>
-      </div>
-      <span class="epa-wip-badge">En Desarrollo</span>
-    </div>
+
 
     <!-- ===== NAVEGACIÓN DE PESTAÑAS ===== -->
     <nav class="epa-nav-tabs">
@@ -978,7 +958,35 @@
 
 <!-- ===== SCRIPT INTERACTIVO ===== -->
 <script>
+  // Buscador de tarjetas
+  function filterEpaCards() {
+    let input = document.getElementById('epaSearchInput');
+    let filter = input.value.toLowerCase();
+    let activeTab = document.querySelector('.epa-tab-content.active');
+    
+    if(!activeTab) return;
+    
+    let cards = activeTab.querySelectorAll('.epa-card');
+    cards.forEach(card => {
+      let title = card.querySelector('.epa-card-title').textContent.toLowerCase();
+      let sector = card.querySelector('.epa-card-sector') ? card.querySelector('.epa-card-sector').textContent.toLowerCase() : '';
+      let desc = card.querySelector('.epa-card-desc') ? card.querySelector('.epa-card-desc').textContent.toLowerCase() : '';
+      
+      if (title.indexOf(filter) > -1 || sector.indexOf(filter) > -1 || desc.indexOf(filter) > -1) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
   function switchEpaTab(tabName, btnElement) {
+    // Limpiar buscador al cambiar de pestaña
+    let searchInput = document.getElementById('epaSearchInput');
+    if(searchInput) {
+      searchInput.value = "";
+    }
+    
     // Desactivar todos los botones
     var buttons = document.querySelectorAll('.epa-tab-btn');
     buttons.forEach(function(b) { b.classList.remove('active'); });
